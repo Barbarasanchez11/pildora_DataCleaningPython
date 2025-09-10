@@ -1,0 +1,82 @@
+{
+  "ecommerce_sucio.csv": {
+    "descripcion": "Dataset de e-commerce con precios en múltiples monedas, categorías inconsistentes y descripciones HTML",
+    "problemas": [
+      "Precios en diferentes monedas",
+      "Categorías inconsistentes",
+      "Descripciones con HTML",
+      "SKUs no validados"
+    ],
+    "filas": 50,
+    "columnas": [
+      "producto_id",
+      "nombre",
+      "precio",
+      "categoria",
+      "descripcion",
+      "sku",
+      "stock",
+      "fecha_creacion",
+      "rating",
+      "reviews"
+    ]
+  },
+  "clientes_sucio.csv": {
+    "descripcion": "Dataset de clientes con datos de contacto inconsistentes y formatos mixtos",
+    "problemas": [
+      "Nombres con espacios extra",
+      "Emails en mayúsculas",
+      "Teléfonos en diferentes formatos",
+      "Direcciones inconsistentes"
+    ],
+    "filas": 100,
+    "columnas": [
+      "cliente_id",
+      "nombre",
+      "email",
+      "telefono",
+      "direccion",
+      "edad",
+      "fecha_registro",
+      "ultima_compra",
+      "total_compras"
+    ]
+  },
+  "temporal_sucio.csv": {
+    "descripcion": "Dataset temporal con fechas en diferentes formatos y gaps temporales",
+    "problemas": [
+      "Fechas en diferentes formatos",
+      "Gaps temporales",
+      "Zona horaria inconsistente",
+      "Frecuencia irregular"
+    ],
+    "filas": 100,
+    "columnas": [
+      "timestamp",
+      "temperatura",
+      "humedad",
+      "presion",
+      "zona_horaria",
+      "estacion"
+    ]
+  },
+  "outliers_demo.csv": {
+    "descripcion": "Dataset con outliers intencionales para demostrar técnicas de detección",
+    "problemas": [
+      "Outliers univariados",
+      "Outliers multivariados",
+      "Valores extremos",
+      "Datos inconsistentes"
+    ],
+    "filas": 206,
+    "columnas": [
+      "precio",
+      "cantidad",
+      "descuento",
+      "edad_cliente",
+      "satisfaccion",
+      "id",
+      "tipo"
+    ]
+  }
+}

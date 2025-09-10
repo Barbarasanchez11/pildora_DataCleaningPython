@@ -1,0 +1,101 @@
+cliente_id,nombre,email,telefono,direccion,edad,fecha_registro,ultima_compra,total_compras
+CLI-001,  Juan Pérez  ,ana@yahoo,611234567,"Avenida de América, 75",20,2025-02-28,2025-02-01,2082.66
+CLI-002,Laura,maria@,611-234-567,"Avenida de América, 75",80,2024-08-15,2025-01-01,1903.59
+CLI-003,  LUIS MARTÍNEZ  ,antonio@,611.234.567,"Avenida de la Paz, 89",50,2024-01-01,2024-12-11,0.0
+CLI-004,Ana María,jose@,611.234.567,"Av. de la Constitución, 45",49,2023-06-29,2025-08-14,0.0
+CLI-005,María José,antonio@,666-123-456,"Calle del Sol, 67",63,2023-12-17,2024-09-15,3269.05
+CLI-006,MARÍA DEL CARMEN,miguel@,34666123456,"Plaza de España, 3",54,2024-09-24,2025-07-13,4681.04
+CLI-007,Antonio,maria@empresa.co.uk,666123456,"Calle Alcalá, 50",61,2024-06-03,2025-03-09,0.0
+CLI-008,JOSÉ ANTONIO,antonio@,611-234-567,"Plaza Nueva, 22",36,2025-08-09,2025-05-04,2280.89
+CLI-009,Miguel,laura@empresa,666 123 456,"Pl. España, 1",22,2024-06-09,2025-02-09,4236.61
+CLI-010,Antonio,maria@,611234567,"Pl. de Cibeles, 1",75,2025-05-06,2025-02-18,3887.82
+CLI-011,Miguel,francisco@empresa,123456789,"Plaza de España, 3",51,2023-02-01,2025-06-28,43.7
+CLI-012,ANA GARCÍA,jose@empresa.com,611234567,"Calle Alcalá, 50",57,2023-11-15,2025-01-19,2596.5
+CLI-013,Pedro,ana@yahoo,666-123-4567,"Avenida Central, 11",71,2023-07-03,2024-10-23,2908.38
+CLI-014,Cristina,pedro@hotmail,611234567,"Avda. de la Libertad, 56",53,2025-09-01,2025-03-07,789.76
+CLI-015,Laura,pedro@hotmail,+34-611-234-567,"Calle Alcalá, 50",42,2025-02-04,,0.0
+CLI-016,pedro lópez,pedro@hotmail.com,+34-666-123-456,"Av. de la Castellana, 200",52,2024-08-30,2025-02-23,3521.49
+CLI-017,David,ana@Yahoo.es  ,611 234 567,"Avenida de América, 75",24,2024-07-31,2025-04-26,2514.08
+CLI-018,JOSÉ ANTONIO,cristina@hotmail,666-123-45,"Pl. España, 1",55,2024-06-05,,3046.3
+CLI-019,María José,pedro@hotmail,34611234567,"Av. de la Castellana, 200",36,2024-02-08,2024-10-24,0.0
+CLI-020,Antonio,maria@,0034-666-123-456,"Pl. España, 1",28,2024-06-24,,2104.14
+CLI-021,Miguel,cristina@hotmail,0034-611-234-567,"Avenida de América, 75",72,2025-03-10,2024-11-18,3364.92
+CLI-022,Pedro,francisco@empresa,34666123456,"Calle Alcalá, 50",38,2023-02-20,2025-08-19,3819.56
+CLI-023,  LUIS MARTÍNEZ  ,CARLOS@GMAIL.COM,666 123 456,"Calle Alcalá, 50",25,2023-11-18,,4301.03
+CLI-024,  maría  ,pedro@hotmail.com,34666123456,"Av. de la Castellana, 200",58,2025-06-01,2024-11-29,3935.94
+CLI-025,Laura,miguel@,611 234 567,"Calle Real, 90",60,2025-07-31,2024-09-30,1469.86
+CLI-026,Cristina,antonio@,+34-666-123-456,"Plaza Nueva, 22",41,2025-05-25,2025-03-26,0.0
+CLI-027,Ana,miguel@,611 234 567,"Calle del Sol, 67",64,2023-04-14,2025-07-22,4363.27
+CLI-028,pedro lópez,JUAN@GMAIL.COM,+34-611-234-567,"Calle del Sol, 67",66,2023-11-14,,3612.41
+CLI-029,Ana María,carlos@,666-123-45,"Pl. España, 1",33,2024-10-31,,0.0
+CLI-030,Pedro-José,francisco@empresa,0034-611-234-567,"C/ Gran Vía, 100",19,2024-01-15,2025-05-23,3212.82
+CLI-031,José María,maria@,666 123 456,"Av. de la Constitución, 45",69,2024-04-05,,2419.37
+CLI-032,Miguel,jose@empresa.com,555-123-456,"Av. de la Constitución, 45",58,2023-08-23,,842.01
+CLI-033,David,cristina@hotmail,555-123-456,"Calle Real, 90",51,2024-01-03,2025-06-30,0.0
+CLI-034,Miguel,antonio@,611.234.567,"Calle Alcalá, 50",26,2024-01-14,2025-04-27,0.0
+CLI-035,Pedro,antonio@,666123456,"Av. de la Constitución, 45",49,2025-08-22,2024-10-02,2518.01
+CLI-036,María José,pedro@hotmail.com,666-123-45,"Avenida de la Paz, 89",75,2024-01-14,2024-10-21,4585.26
+CLI-037,Francisco,miguel@,6112345678,"Avenida Central, 11",29,2024-08-09,,1590.57
+CLI-038,María José,ana@yahoo,666.123.456,"Pl. de la Iglesia, 78",30,2025-07-01,2024-10-21,1428.8
+CLI-039,José María,CARLOS@GMAIL.COM,666-123-4567,"Pl. de Cibeles, 1",39,2023-10-13,2024-09-24,0.0
+CLI-040,Isabel,pedro@hotmail.com,0034-611-234-567,"Calle Alcalá, 50",77,2025-01-14,2025-02-11,2142.66
+CLI-041,Carlos,ana@yahoo,666-123-4567,"Av. de la Constitución, 45",34,2024-02-22,2025-06-06,710.61
+CLI-042,carmen garcía,  isabel@yahoo.es  ,34666123456,"Plaza Mayor, 12",58,2024-02-12,2025-03-08,1207.88
+CLI-043,Laura,jose@empresa.com,666 123 456,"Calle del Sol, 67",28,2025-08-12,,0.0
+CLI-044,  LUIS MARTÍNEZ  ,francisco@empresa,+34-666-123-456,"Avenida de América, 75",52,2024-06-03,2025-02-01,358.1
+CLI-045,Pedro,jose@,0034-666-123-456,"C/ Mayor, 123",48,2025-01-09,,888.16
+CLI-046,JOSÉ ANTONIO,jose@empresa.com,611-234-567,"Plaza Mayor, 12",47,2023-05-28,2025-03-21,3070.65
+CLI-047,carmen garcía,francisco@empresa,666123456,"Plaza Mayor, 12",37,2023-11-13,,0.0
+CLI-048,  LUIS MARTÍNEZ  ,ana@yahoo,34666123456,"Calle Alcalá, 50",54,2025-01-26,2025-06-05,2969.14
+CLI-049,  LUIS MARTÍNEZ  ,ana@yahoo,555-123-456,"Plaza de España, 3",71,2024-01-17,2025-05-10,0.0
+CLI-050,pedro lópez,jose@empresa.com,0034-611-234-567,"Plaza de España, 3",73,2025-05-10,2025-01-08,0.0
+CLI-051,Ana María,  isabel@yahoo.es  ,6661234567,"Pl. de Cibeles, 1",56,2023-01-13,,4498.94
+CLI-052,Cristina,maria@empresa.co.uk,611234567,"Avenida Central, 11",40,2025-04-11,,2874.29
+CLI-053,  maría  ,ana@yahoo,666 123 456,"Calle Alcalá, 50",35,2024-04-21,,4588.97
+CLI-054,ANA GARCÍA,miguel@,666-123-4567,"C/ San Juan, 34",79,2023-04-10,2024-12-22,3844.99
+CLI-055,Isabel,cristina@hotmail,666-123-45,"Av. de la Constitución, 45",49,2024-09-13,2024-10-23,0.0
+CLI-056,Cristina,maria@empresa.co.uk,666-123-4567,"Av. de la Castellana, 200",57,2023-08-21,2025-03-28,3402.22
+CLI-057,Francisco,luis@correo,34611234567,"Plaza de España, 3",72,2023-03-31,2025-02-21,3234.45
+CLI-058,Laura,laura@empresa,666-123-45,"Plaza Mayor, 12",21,2024-02-11,2024-10-23,4800.27
+CLI-059,Cristina,pedro@hotmail.com,666-123-456,"Avenida de América, 75",26,2024-03-31,,3605.97
+CLI-060,ANA GARCÍA,carlos@,666 123 456,"Pl. España, 1",55,2024-08-23,2025-05-22,4045.61
+CLI-061,  carlos ruiz  ,pedro@hotmail,6661234567,"Plaza Nueva, 22",18,2024-09-19,2025-06-08,3753.49
+CLI-062,  Juan Pérez  ,ana@Yahoo.es  ,0034-666-123-456,"C/ Gran Vía, 100",45,2025-05-22,2025-05-27,559.62
+CLI-063,Antonio,ana@Yahoo.es  ,34611234567,"C/ Mayor, 123",25,2025-06-08,,1051.04
+CLI-064,  carlos ruiz  ,  luis@correo.es  ,0034-666-123-456,"Avenida de América, 75",75,2024-08-13,2025-01-28,2900.85
+CLI-065,Carlos,laura@empresa,611-234-567,"Avda. de la Libertad, 56",77,2025-02-21,2024-10-10,190.26
+CLI-066,Laura,pedro@hotmail.com,123456789,"Avenida Central, 11",71,2024-08-12,2025-08-19,370.54
+CLI-067,  LUIS MARTÍNEZ  ,maria@empresa.co.uk,34611234567,"Plaza Mayor, 12",52,2024-10-28,,1106.69
+CLI-068,  carlos ruiz  ,  luis@correo.es  ,666-123-45,"Calle del Sol, 67",48,2024-01-28,2025-02-23,3404.53
+CLI-069,  Juan Pérez  ,ana@Yahoo.es  ,0034-666-123-456,"Plaza Nueva, 22",28,2023-12-18,2025-03-16,2098.25
+CLI-070,MARÍA DEL CARMEN,ana@Yahoo.es  ,666-123-456,"Pl. España, 1",65,2024-04-26,2025-02-20,0.0
+CLI-071,María José,antonio@,0034-666-123-456,"Av. de la Constitución, 45",26,2024-04-23,2025-01-14,2635.61
+CLI-072,Ana,  isabel@yahoo.es  ,611234567,"Calle del Sol, 67",43,2025-07-23,,4963.49
+CLI-073,Cristina,  luis@correo.es  ,34611234567,"Calle del Sol, 67",62,2024-06-03,,0.0
+CLI-074,JOSÉ ANTONIO,antonio@,123456789,"Avenida de la Paz, 89",66,2024-01-13,2024-12-31,2571.45
+CLI-075,José María,maria@empresa.co.uk,0034-611-234-567,"Calle Alcalá, 50",76,2023-05-17,2025-06-09,3418.06
+CLI-076,Francisco,david@correo.com,611 234 567,"Av. de la Castellana, 200",64,2025-08-24,2025-06-03,2933.04
+CLI-077,Carlos,laura@empresa,0034-611-234-567,"C/ Gran Vía, 100",78,2024-09-21,,3185.23
+CLI-078,JOSÉ ANTONIO,francisco@empresa,611 234 567,"Plaza Nueva, 22",19,2025-06-04,,960.47
+CLI-079,Carlos,cristina@hotmail,666.123.456,"Avenida de América, 75",80,2024-11-10,2024-12-04,0.0
+CLI-080,  carlos ruiz  ,francisco@empresa,666.123.456,"Pl. España, 1",28,2025-07-06,2025-01-09,3751.23
+CLI-081,  maría  ,CARLOS@GMAIL.COM,666-123-4567,"C/ Gran Vía, 100",19,2023-03-22,,0.0
+CLI-082,Isabel,laura@empresa,666-123-45,"Plaza de España, 3",43,2024-06-07,2025-01-20,0.0
+CLI-083,MARÍA DEL CARMEN,maria@empresa.co.uk,0034-666-123-456,"Av. de la Castellana, 200",42,2023-12-17,2025-08-03,831.93
+CLI-084,Ana María,JUAN@GMAIL.COM,34666123456,"C/ Gran Vía, 100",27,2023-05-04,2025-04-29,3569.09
+CLI-085,Ana,pedro@hotmail,6661234567,"Pl. de Cibeles, 1",74,2024-02-13,,3811.06
+CLI-086,  maría  ,jose@,34611234567,"Pl. España, 1",43,2023-07-10,2025-01-26,2372.92
+CLI-087,  carlos ruiz  ,JUAN@GMAIL.COM,611.234.567,"Av. de la Constitución, 45",59,2023-05-17,2025-01-31,818.92
+CLI-088,Carlos,JUAN@GMAIL.COM,6112345678,"Avenida de la Paz, 89",40,2023-01-30,2024-10-28,1131.13
+CLI-089,  maría  ,antonio@,34666123456,"Plaza de España, 3",80,2023-01-01,2024-11-14,3081.02
+CLI-090,Ana María,carlos@,666-123-4567,"Calle del Sol, 67",21,2024-02-05,2024-11-30,4028.85
+CLI-091,  carlos ruiz  ,ana@yahoo,666.123.456,"Av. de la Castellana, 200",69,2023-08-10,2025-02-05,1542.54
+CLI-092,JOSÉ ANTONIO,cristina@hotmail,611.234.567,"C/ Mayor, 123",45,2024-06-26,2024-10-15,0.0
+CLI-093,  carlos ruiz  ,pedro@hotmail.com,611-234-567,"Avda. de la Libertad, 56",30,2024-06-30,,3854.83
+CLI-094,MARÍA DEL CARMEN,ana@yahoo,+34-666-123-456,"Pl. España, 1",66,2023-01-31,,960.54
+CLI-095,Carlos,  luis@correo.es  ,666 123 456,"Calle Alcalá, 50",34,2023-08-26,,0.0
+CLI-096,David,  luis@correo.es  ,611 234 567,"Plaza Mayor, 12",68,2025-07-14,2024-11-19,1653.2
+CLI-097,  maría  ,pedro@hotmail,666 123 456,"Calle Alcalá, 50",40,2024-07-31,,810.24
+CLI-098,Isabel,ana@yahoo,666-123-45,"Calle Real, 90",61,2024-09-25,2025-01-22,3094.33
+CLI-099,Francisco,maria@,555-123-456,"Plaza Mayor, 12",21,2025-05-14,2025-05-21,1732.71
+CLI-100,JOSÉ ANTONIO,antonio@,666123456,"Plaza Mayor, 12",51,2025-05-06,2024-09-30,0.0

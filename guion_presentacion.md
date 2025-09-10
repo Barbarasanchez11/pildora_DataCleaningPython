@@ -1,12 +1,36 @@
-# Guión Detallado para tu Presentación
+# 🎯 Guión Completo: Píldora Data Cleaning Avanzado en Python
 
-## Introducción (2 min)
-"Mi compañero nos ha mostrado los fundamentos. Ahora vamos a ver técnicas más avanzadas que usarás en proyectos reales del día a día."
+## 📋 Información General
+- **Duración**: 30 minutos (25 min presentación + 5 min preguntas)
+- **Audiencia**: Desarrolladores/Data Scientists con conocimientos básicos de Python
+- **Objetivo**: Mostrar técnicas avanzadas de limpieza de datos para proyectos reales
 
-### Puntos clave:
-- Enfatizar que son técnicas del mundo real
-- Mencionar que marcan la diferencia en la calidad del análisis
-- Establecer expectativas de 30 minutos
+---
+
+## 🚀 Introducción (2 minutos)
+
+### Saludo y Contexto
+"Hola a todos! 👋 Mi compañero nos ha mostrado los fundamentos del data cleaning. Ahora vamos a ver técnicas más avanzadas que realmente marcan la diferencia en la calidad de tus análisis."
+
+### Puntos clave a transmitir:
+- ✅ Estas son técnicas del mundo real que usarás en proyectos
+- ✅ Van más allá de `dropna()` y `fillna()`
+- ✅ La diferencia entre un análisis mediocre y uno profesional
+- ✅ 30 minutos que cambiarán tu forma de trabajar con datos
+
+### Agenda visual:
+```
+📊 Técnicas Avanzadas (15 min)
+   ├── Detección inteligente de outliers
+   ├── Limpieza de texto con regex
+   └── Validación de datos
+🎯 Casos Prácticos (10 min)
+   ├── E-commerce con múltiples problemas
+   └── Series temporales complejas
+⚙️ Automatización (5 min)
+   ├── Pipeline reutilizable
+   └── Buenas prácticas
+```
 
 ## Parte 1: Detección Inteligente de Outliers (8 min)
 

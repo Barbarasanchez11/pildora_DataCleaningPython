@@ -1,0 +1,51 @@
+producto_id,nombre,precio,categoria,descripcion,sku,stock,fecha_creacion,rating,reviews
+PROD-001,Sony WH-1000XM4 Headphones,£329.99,audio,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-8888,81,2025-08-31 14:32:56,4.0,716
+PROD-002,Samsung Galaxy S21 Ultra,£279.99,Tablets,PlayStation 5 - <span>Consola de nueva generación</span>,SKU-6930,56,2024-12-12 14:32:56,4.3,16
+PROD-003,"Samsung 4K Smart TV 55""",299.99 USD,computers,"<div>MacBook Pro 16"" con chip <b>M1 Pro</b></div>",SKU-7549,82,2025-01-18 14:32:56,3.7,761
+PROD-004,"MacBook Pro 16"" M1 Pro",£349.99,tablets,<p>El <strong>iPhone 13 Pro Max</strong> con <em>256GB</em> de almacenamiento</p>,SKU-1825,49,2025-06-10 14:32:56,3.8,505
+PROD-005,Dell XPS 13 Laptop,"$1,199.00",Consolas,PlayStation 5 - <span>Consola de nueva generación</span>,SKU-8653,53,2025-06-23 14:32:56,4.0,710
+PROD-006,iPhone 13 Pro Max 256GB,$349.99,Electronics,"<div>MacBook Pro 16"" con chip <b>M1 Pro</b></div>",SKU-2697,66,2024-09-29 14:32:56,4.8,604
+PROD-007,"MacBook Pro 16"" M1 Pro",399.00 EUR,Electrónica,"<div>MacBook Pro 16"" con chip <b>M1 Pro</b></div>",SKU-7843,92,2025-07-06 14:32:56,4.1,515
+PROD-008,iPhone 13 Pro Max 256GB,"1,099.00€",Electrónica,Samsung Galaxy S21 Ultra con cámara de 108MP,SKU-6497,28,2025-05-22 14:32:56,4.2,344
+PROD-009,Samsung Galaxy S21 Ultra,"$2,099.00",Electrónica,<p>El <strong>iPhone 13 Pro Max</strong> con <em>256GB</em> de almacenamiento</p>,SKU-3994,97,2024-10-30 14:32:56,3.6,548
+PROD-010,"MacBook Pro 16"" M1 Pro",349.99 USD,Audio,<p>El <strong>iPhone 13 Pro Max</strong> con <em>256GB</em> de almacenamiento</p>,SKU-9404,98,2025-09-06 14:32:56,4.1,709
+PROD-011,"MacBook Pro 16"" M1 Pro","1,799.99 USD",Headphones,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-4628,20,2025-02-06 14:32:56,4.5,796
+PROD-012,PlayStation 5 Console,"1,099.00€",Smartphones,PlayStation 5 - <span>Consola de nueva generación</span>,SKU-9005,23,2024-09-10 14:32:56,3.7,783
+PROD-013,Dell XPS 13 Laptop,"2,299.00 EUR",tech,<p>El <strong>iPhone 13 Pro Max</strong> con <em>256GB</em> de almacenamiento</p>,SKU-5293,49,2024-12-12 14:32:56,3.1,540
+PROD-014,"Samsung 4K Smart TV 55""",£329.99,laptops,PlayStation 5 - <span>Consola de nueva generación</span>,SKU-2344,10,2025-06-11 14:32:56,4.2,202
+PROD-015,AirPods Pro 2nd Gen,$399.99,Audio,Dell XPS 13 - Laptop ultradelgado,SKU-8596,16,2025-06-22 14:32:56,4.4,184
+PROD-016,Sony WH-1000XM4 Headphones,"$1,199.00",electronics,Samsung Galaxy S21 Ultra con cámara de 108MP,SKU-8568,25,2025-04-17 14:32:56,3.1,985
+PROD-017,PlayStation 5 Console,£349.99,laptops,<p>iPad Air 5ta generación con <strong>chip M1</strong></p>,SKU-4188,3,2025-02-24 14:32:56,4.8,67
+PROD-018,Sony WH-1000XM4 Headphones,"1,899.00€",Laptops,<p>iPad Air 5ta generación con <strong>chip M1</strong></p>,SKU-6456,46,2024-10-23 14:32:56,4.5,424
+PROD-019,"Samsung 4K Smart TV 55""",349.99€,computers,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-4367,97,2025-08-24 14:32:56,4.1,506
+PROD-020,"MacBook Pro 16"" M1 Pro",$399.99,tablets,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-4646,60,2025-06-11 14:32:56,4.6,204
+PROD-021,Samsung Galaxy S21 Ultra,"$1,199.00",tech,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-8440,47,2025-01-30 14:32:56,3.2,937
+PROD-022,Samsung Galaxy S21 Ultra,"1,199.99€",Laptops,Samsung Galaxy S21 Ultra con cámara de 108MP,SKU-8551,40,2025-02-09 14:32:56,3.9,847
+PROD-023,AirPods Pro 2nd Gen,£349.99,electronics,Dell XPS 13 - Laptop ultradelgado,SKU-4556,67,2025-01-24 14:32:56,4.4,176
+PROD-024,AirPods Pro 2nd Gen,329.99 USD,computers,<p>iPad Air 5ta generación con <strong>chip M1</strong></p>,SKU-7670,79,2025-01-19 14:32:56,4.9,739
+PROD-025,Dell XPS 13 Laptop,"2,299.00 EUR",Electronics,<div>AirPods Pro 2da generación con <em>cancelación de ruido</em></div>,SKU-8602,54,2025-04-25 14:32:56,3.4,939
+PROD-026,"Samsung 4K Smart TV 55""","$1,199.00",electronics,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-3629,19,2024-10-28 14:32:56,4.0,374
+PROD-027,Dell XPS 13 Laptop,449.00 EUR,consoles,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-3863,18,2025-04-17 14:32:56,3.9,837
+PROD-028,Dell XPS 13 Laptop,$349.99,Electronics,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-4093,6,2024-10-01 14:32:56,4.9,262
+PROD-029,"Samsung 4K Smart TV 55""",299.99 USD,Audio,Dell XPS 13 - Laptop ultradelgado,SKU-4768,77,2025-05-30 14:32:56,4.0,732
+PROD-030,"MacBook Pro 16"" M1 Pro",449.00 EUR,computers,PlayStation 5 - <span>Consola de nueva generación</span>,SKU-3233,76,2025-05-09 14:32:56,4.5,733
+PROD-031,Dell XPS 13 Laptop,299.99€,Electrónica,Dell XPS 13 - Laptop ultradelgado,SKU-1511,96,2025-03-03 14:32:56,3.1,465
+PROD-032,"MacBook Pro 16"" M1 Pro",£299.99,Tablets,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-6577,56,2025-07-01 14:32:56,4.1,926
+PROD-033,PlayStation 5 Console,"1,099.00€",gaming,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-4001,35,2025-03-14 14:32:56,3.4,529
+PROD-034,iPad Air 5th Gen,399.00 EUR,Smartphones,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-4761,90,2025-06-05 14:32:56,3.8,878
+PROD-035,"MacBook Pro 16"" M1 Pro","$1,299.99",smartphones,<div>AirPods Pro 2da generación con <em>cancelación de ruido</em></div>,SKU-1899,96,2025-08-29 14:32:56,3.8,246
+PROD-036,PlayStation 5 Console,"£1,799.99",Smartphones,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-9143,20,2025-03-23 14:32:56,5.0,95
+PROD-037,Nintendo Switch OLED,"1,799.99 USD",tablets,Dell XPS 13 - Laptop ultradelgado,SKU-7281,55,2024-12-21 14:32:56,3.1,112
+PROD-038,PlayStation 5 Console,399.00 EUR,Audio,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-5355,40,2025-04-14 14:32:56,4.3,710
+PROD-039,"MacBook Pro 16"" M1 Pro","$1,199.00",electronics,"Samsung 4K Smart TV 55"" - <b>Televisor inteligente</b>",SKU-4391,98,2025-05-31 14:32:56,4.3,985
+PROD-040,iPad Air 5th Gen,"$1,199.00",Electrónica,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-3868,87,2024-12-27 14:32:56,4.3,789
+PROD-041,iPhone 13 Pro Max 256GB,"1,799.99 USD",Consolas,Dell XPS 13 - Laptop ultradelgado,SKU-1107,25,2024-10-21 14:32:56,4.9,661
+PROD-042,AirPods Pro 2nd Gen,"1,799.99 USD",Electrónica,"<div>MacBook Pro 16"" con chip <b>M1 Pro</b></div>",SKU-9713,57,2025-08-24 14:32:56,4.2,800
+PROD-043,PlayStation 5 Console,299.99 USD,Consolas,"<div>MacBook Pro 16"" con chip <b>M1 Pro</b></div>",SKU-8542,89,2024-11-14 14:32:56,4.6,555
+PROD-044,"MacBook Pro 16"" M1 Pro",349.99 USD,Consolas,Sony WH-1000XM4 - <span>Auriculares inalámbricos</span>,SKU-5268,76,2024-11-20 14:32:56,3.7,682
+PROD-045,Samsung Galaxy S21 Ultra,329.99 USD,gaming,<p>iPad Air 5ta generación con <strong>chip M1</strong></p>,SKU-3792,87,2025-04-03 14:32:56,3.4,162
+PROD-046,PlayStation 5 Console,329.99 USD,Electrónica,"Samsung 4K Smart TV 55"" - <b>Televisor inteligente</b>",SKU-1867,10,2025-01-06 14:32:56,3.9,339
+PROD-047,iPad Air 5th Gen,$349.99,computers,Samsung Galaxy S21 Ultra con cámara de 108MP,SKU-3109,80,2025-07-15 14:32:56,4.2,87
+PROD-048,AirPods Pro 2nd Gen,$399.99,Laptops,<div>AirPods Pro 2da generación con <em>cancelación de ruido</em></div>,SKU-6674,23,2025-04-24 14:32:56,3.5,325
+PROD-049,iPad Air 5th Gen,"1,899.00€",smartphones,<p>El <strong>iPhone 13 Pro Max</strong> con <em>256GB</em> de almacenamiento</p>,SKU-4485,81,2025-05-22 14:32:56,3.4,250
+PROD-050,Sony WH-1000XM4 Headphones,"2,499.00 EUR",Consolas,Nintendo Switch OLED - <i>Consola de videojuegos</i>,SKU-5148,48,2025-02-06 14:32:56,4.4,223
