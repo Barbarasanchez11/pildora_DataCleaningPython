@@ -15,6 +15,7 @@ from datetime import datetime
 import warnings
 import os
 import sys
+import importlib.util
 warnings.filterwarnings('ignore')
 
 # Configurar visualizaciones
@@ -23,26 +24,57 @@ sns.set_palette("husl")
 plt.rcParams['figure.figsize'] = (12, 8)
 plt.rcParams['font.size'] = 10
 
+# Función para importar módulos con nombres que empiezan con números
+def importar_modulo(nombre_archivo, nombre_modulo):
+    """Importa un módulo desde un archivo con nombre que empieza con número"""
+    try:
+        spec = importlib.util.spec_from_file_location(nombre_modulo, nombre_archivo)
+        modulo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(modulo)
+        return modulo
+    except Exception as e:
+        print(f"❌ Error importando {nombre_archivo}: {e}")
+        return None
+
 # Importar módulos de la píldora
 try:
-    from deteccion_outliers import (
-        crear_datos_ejemplo, detectar_outliers_zscore, 
-        detectar_outliers_iqr, detectar_outliers_isolation_forest,
-        comparar_metodos_outliers, visualizar_outliers
-    )
-    from limpieza_texto import (
-        LimpiadorTexto, crear_datos_sucios,
-        demostrar_limpieza_telefonos, demostrar_limpieza_emails,
-        demostrar_limpieza_nombres, demostrar_limpieza_html
-    )
-    from casos_practicos import (
-        LimpiadorEcommerce, LimpiadorTemporal,
-        crear_datos_ecommerce_sucios, crear_datos_temporales_sucios,
-        caso_ecommerce, caso_temporal
-    )
-    from pipeline_automatizado import (
-        DataCleaner, ValidadorCalidad, crear_datos_demo, demostrar_pipeline
-    )
+    # Importar módulos usando importlib
+    deteccion_outliers = importar_modulo('01_deteccion_outliers.py', 'deteccion_outliers')
+    limpieza_texto = importar_modulo('02_limpieza_texto.py', 'limpieza_texto')
+    casos_practicos = importar_modulo('03_casos_practicos.py', 'casos_practicos')
+    pipeline_automatizado = importar_modulo('04_pipeline_automatizado.py', 'pipeline_automatizado')
+    
+    # Verificar que todos los módulos se importaron correctamente
+    if not all([deteccion_outliers, limpieza_texto, casos_practicos, pipeline_automatizado]):
+        raise ImportError("No se pudieron importar todos los módulos necesarios")
+        
+    # Extraer las funciones y clases necesarias
+    crear_datos_ejemplo = deteccion_outliers.crear_datos_ejemplo
+    detectar_outliers_zscore = deteccion_outliers.detectar_outliers_zscore
+    detectar_outliers_iqr = deteccion_outliers.detectar_outliers_iqr
+    detectar_outliers_isolation_forest = deteccion_outliers.detectar_outliers_isolation_forest
+    comparar_metodos_outliers = deteccion_outliers.comparar_metodos_outliers
+    visualizar_outliers = deteccion_outliers.visualizar_outliers
+    
+    LimpiadorTexto = limpieza_texto.LimpiadorTexto
+    crear_datos_sucios = limpieza_texto.crear_datos_sucios
+    demostrar_limpieza_telefonos = limpieza_texto.demostrar_limpieza_telefonos
+    demostrar_limpieza_emails = limpieza_texto.demostrar_limpieza_emails
+    demostrar_limpieza_nombres = limpieza_texto.demostrar_limpieza_nombres
+    demostrar_limpieza_html = limpieza_texto.demostrar_limpieza_html
+    
+    LimpiadorEcommerce = casos_practicos.LimpiadorEcommerce
+    LimpiadorTemporal = casos_practicos.LimpiadorTemporal
+    crear_datos_ecommerce_sucios = casos_practicos.crear_datos_ecommerce_sucios
+    crear_datos_temporales_sucios = casos_practicos.crear_datos_temporales_sucios
+    caso_ecommerce = casos_practicos.caso_ecommerce
+    caso_temporal = casos_practicos.caso_temporal
+    
+    DataCleaner = pipeline_automatizado.DataCleaner
+    ValidadorCalidad = pipeline_automatizado.ValidadorCalidad
+    crear_datos_demo = pipeline_automatizado.crear_datos_demo
+    demostrar_pipeline = pipeline_automatizado.demostrar_pipeline
+    
 except ImportError as e:
     print(f"❌ Error importando módulos: {e}")
     print("Asegúrate de que todos los archivos estén en el mismo directorio")
@@ -155,6 +187,10 @@ class PresentacionInteractiva:
         print("• Isolation Forest: Múltiples variables (recomendado)")
         print()
         
+        # Crear visualizaciones
+        print("📊 CREANDO VISUALIZACIONES...")
+        self.crear_visualizacion_outliers(df_comparacion, columnas_numericas)
+        
         # Guardar resultados
         self.resultados['outliers'] = df_comparacion
         
@@ -199,6 +235,10 @@ class PresentacionInteractiva:
         print("• Emails: r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'")
         print("• HTML: r'<[^>]+>' (eliminar etiquetas)")
         print()
+        
+        # Crear visualizaciones
+        print("📊 CREANDO VISUALIZACIONES...")
+        self.crear_visualizacion_texto(df)
         
         # Guardar resultados
         self.resultados['texto'] = df
@@ -259,6 +299,10 @@ class PresentacionInteractiva:
         print("• Siempre validar antes de procesar")
         print()
         
+        # Crear visualizaciones para casos prácticos
+        print("📊 CREANDO VISUALIZACIONES...")
+        self.crear_visualizacion_casos_practicos(df_ecommerce, df_temporal)
+        
         # Guardar resultados
         self.resultados['casos'] = {
             'ecommerce': df_ecommerce,
@@ -315,6 +359,10 @@ class PresentacionInteractiva:
         print(f"  🔧 Nulos imputados: {reporte['resumen']['nulos_imputados']}")
         print(f"  ⚙️ Transformaciones: {reporte['resumen']['transformaciones_aplicadas']}")
         print()
+        
+        # Crear visualizaciones del pipeline
+        print("📊 CREANDO VISUALIZACIONES...")
+        self.crear_visualizacion_pipeline(df_demo, df_limpio, reporte)
         
         # Guardar resultados
         self.resultados['pipeline'] = {
@@ -474,6 +522,351 @@ class PresentacionInteractiva:
             print()
         
         self.pausar("Presiona Enter para volver al menú...")
+    
+    def crear_visualizacion_outliers(self, df, columnas):
+        """Crea visualizaciones para la detección de outliers"""
+        try:
+            fig, axes = plt.subplots(2, 3, figsize=(18, 12))
+            axes = axes.ravel()
+            
+            # Métodos de detección
+            metodos = ['zscore', 'iqr', 'isolation']
+            
+            for i, metodo in enumerate(metodos):
+                if f'outlier_{metodo}' in df.columns:
+                    # Box plot para cada método
+                    ax = axes[i]
+                    datos_por_columna = []
+                    etiquetas = []
+                    
+                    for col in columnas[:4]:  # Máximo 4 columnas
+                        datos_por_columna.append(df[col])
+                        etiquetas.append(col)
+                    
+                    bp = ax.boxplot(datos_por_columna, labels=etiquetas, patch_artist=True)
+                    ax.set_title(f'Box Plot - Método {metodo.upper()}')
+                    ax.set_ylabel('Valores')
+                    ax.tick_params(axis='x', rotation=45)
+                    
+                    # Colorear outliers
+                    for patch in bp['boxes']:
+                        patch.set_facecolor('lightblue')
+            
+            # Scatter plot comparativo
+            ax = axes[3]
+            if 'outlier_isolation' in df.columns:
+                outliers_mask = df['outlier_isolation']
+                ax.scatter(df[~outliers_mask].index, df[~outliers_mask]['precio'], 
+                          alpha=0.6, label='Normal', color='blue', s=20)
+                ax.scatter(df[outliers_mask].index, df[outliers_mask]['precio'], 
+                          alpha=0.8, label='Outlier', color='red', s=50)
+                ax.set_title('Outliers en Precio (Isolation Forest)')
+                ax.set_xlabel('Índice del registro')
+                ax.set_ylabel('Precio')
+                ax.legend()
+                ax.grid(True, alpha=0.3)
+            
+            # Comparación de métodos
+            ax = axes[4]
+            if all(f'outlier_{metodo}' in df.columns for metodo in metodos):
+                comparacion = []
+                for metodo in metodos:
+                    comparacion.append(df[f'outlier_{metodo}'].sum())
+                
+                ax.bar(metodos, comparacion, color=['skyblue', 'lightgreen', 'salmon'])
+                ax.set_title('Comparación de Métodos de Detección')
+                ax.set_ylabel('Número de Outliers Detectados')
+                ax.tick_params(axis='x', rotation=45)
+                
+                # Agregar valores en las barras
+                for i, v in enumerate(comparacion):
+                    ax.text(i, v + 0.5, str(v), ha='center', va='bottom')
+            
+            # Distribución de datos
+            ax = axes[5]
+            if 'precio' in df.columns:
+                ax.hist(df['precio'], bins=30, alpha=0.7, color='lightcoral', edgecolor='black')
+                ax.set_title('Distribución de Precios')
+                ax.set_xlabel('Precio')
+                ax.set_ylabel('Frecuencia')
+                ax.grid(True, alpha=0.3)
+            
+            plt.tight_layout()
+            plt.savefig('visualizacion_outliers.png', dpi=300, bbox_inches='tight')
+            plt.show()
+            
+            print("✅ Visualización guardada como 'visualizacion_outliers.png'")
+            
+        except Exception as e:
+            print(f"⚠️ Error creando visualización: {e}")
+    
+    def crear_visualizacion_texto(self, df):
+        """Crea visualizaciones para la limpieza de texto"""
+        try:
+            fig, axes = plt.subplots(2, 2, figsize=(15, 10))
+            
+            # Antes vs Después de limpieza de teléfonos
+            ax = axes[0, 0]
+            if 'telefono' in df.columns and 'telefono_limpio' in df.columns:
+                antes = df['telefono'].notna().sum()
+                despues = df['telefono_limpio'].notna().sum()
+                
+                ax.bar(['Antes', 'Después'], [antes, despues], 
+                      color=['lightcoral', 'lightgreen'])
+                ax.set_title('Limpieza de Teléfonos')
+                ax.set_ylabel('Registros Válidos')
+                
+                # Agregar valores en las barras
+                ax.text(0, antes + 1, str(antes), ha='center', va='bottom')
+                ax.text(1, despues + 1, str(despues), ha='center', va='bottom')
+            
+            # Antes vs Después de limpieza de emails
+            ax = axes[0, 1]
+            if 'email' in df.columns and 'email_limpio' in df.columns:
+                antes = df['email'].notna().sum()
+                despues = df['email_limpio'].notna().sum()
+                
+                ax.bar(['Antes', 'Después'], [antes, despues], 
+                      color=['lightcoral', 'lightgreen'])
+                ax.set_title('Limpieza de Emails')
+                ax.set_ylabel('Registros Válidos')
+                
+                # Agregar valores en las barras
+                ax.text(0, antes + 1, str(antes), ha='center', va='bottom')
+                ax.text(1, despues + 1, str(despues), ha='center', va='bottom')
+            
+            # Distribución de categorías limpias
+            ax = axes[1, 0]
+            if 'categoria_limpia' in df.columns:
+                categorias = df['categoria_limpia'].value_counts()
+                ax.pie(categorias.values, labels=categorias.index, autopct='%1.1f%%', startangle=90)
+                ax.set_title('Distribución de Categorías Limpias')
+            
+            # Longitud de descripciones limpias
+            ax = axes[1, 1]
+            if 'descripcion_limpia' in df.columns:
+                longitudes = df['descripcion_limpia'].str.len().dropna()
+                ax.hist(longitudes, bins=20, alpha=0.7, color='lightblue', edgecolor='black')
+                ax.set_title('Distribución de Longitudes de Descripciones')
+                ax.set_xlabel('Longitud de Caracteres')
+                ax.set_ylabel('Frecuencia')
+                ax.grid(True, alpha=0.3)
+            
+            plt.tight_layout()
+            plt.savefig('visualizacion_texto.png', dpi=300, bbox_inches='tight')
+            plt.show()
+            
+            print("✅ Visualización guardada como 'visualizacion_texto.png'")
+            
+        except Exception as e:
+            print(f"⚠️ Error creando visualización: {e}")
+    
+    def crear_visualizacion_pipeline(self, df_antes, df_despues, reporte):
+        """Crea visualizaciones para el pipeline automatizado"""
+        try:
+            fig, axes = plt.subplots(2, 3, figsize=(18, 12))
+            
+            # Comparación de filas antes y después
+            ax = axes[0, 0]
+            filas_antes = len(df_antes)
+            filas_despues = len(df_despues)
+            filas_eliminadas = filas_antes - filas_despues
+            
+            ax.bar(['Antes', 'Después'], [filas_antes, filas_despues], 
+                  color=['lightcoral', 'lightgreen'])
+            ax.set_title('Filas Antes vs Después del Pipeline')
+            ax.set_ylabel('Número de Filas')
+            
+            # Agregar valores
+            ax.text(0, filas_antes + 1, str(filas_antes), ha='center', va='bottom')
+            ax.text(1, filas_despues + 1, str(filas_despues), ha='center', va='bottom')
+            
+            # Valores nulos antes y después
+            ax = axes[0, 1]
+            nulos_antes = df_antes.isnull().sum().sum()
+            nulos_despues = df_despues.isnull().sum().sum()
+            
+            ax.bar(['Antes', 'Después'], [nulos_antes, nulos_despues], 
+                  color=['lightcoral', 'lightgreen'])
+            ax.set_title('Valores Nulos Antes vs Después')
+            ax.set_ylabel('Número de Valores Nulos')
+            
+            # Agregar valores
+            ax.text(0, nulos_antes + 0.5, str(nulos_antes), ha='center', va='bottom')
+            ax.text(1, nulos_despues + 0.5, str(nulos_despues), ha='center', va='bottom')
+            
+            # Duplicados eliminados
+            ax = axes[0, 2]
+            duplicados = df_antes.duplicated().sum()
+            ax.bar(['Duplicados Eliminados'], [duplicados], color='orange')
+            ax.set_title('Duplicados Eliminados')
+            ax.set_ylabel('Número de Duplicados')
+            ax.text(0, duplicados + 0.1, str(duplicados), ha='center', va='bottom')
+            
+            # Transformaciones aplicadas
+            ax = axes[1, 0]
+            if 'transformaciones_aplicadas' in reporte['resumen']:
+                transformaciones = reporte['resumen']['transformaciones_aplicadas']
+                ax.bar(['Transformaciones'], [transformaciones], color='purple')
+                ax.set_title('Transformaciones Aplicadas')
+                ax.set_ylabel('Número de Transformaciones')
+                ax.text(0, transformaciones + 0.1, str(transformaciones), ha='center', va='bottom')
+            
+            # Calidad de datos (antes vs después)
+            ax = axes[1, 1]
+            calidad_antes = ((filas_antes - nulos_antes) / (filas_antes * len(df_antes.columns))) * 100
+            calidad_despues = ((filas_despues - nulos_despues) / (filas_despues * len(df_despues.columns))) * 100
+            
+            ax.bar(['Antes', 'Después'], [calidad_antes, calidad_despues], 
+                  color=['lightcoral', 'lightgreen'])
+            ax.set_title('Calidad de Datos (%)')
+            ax.set_ylabel('Porcentaje de Completitud')
+            ax.set_ylim(0, 100)
+            
+            # Agregar valores
+            ax.text(0, calidad_antes + 1, f'{calidad_antes:.1f}%', ha='center', va='bottom')
+            ax.text(1, calidad_despues + 1, f'{calidad_despues:.1f}%', ha='center', va='bottom')
+            
+            # Resumen de mejoras
+            ax = axes[1, 2]
+            mejoras = [
+                f'Filas eliminadas: {filas_eliminadas}',
+                f'Nulos imputados: {nulos_antes - nulos_despues}',
+                f'Duplicados: {duplicados}',
+                f'Calidad: +{calidad_despues - calidad_antes:.1f}%'
+            ]
+            
+            ax.text(0.1, 0.8, 'MEJORAS LOGRADAS:', fontsize=12, fontweight='bold', transform=ax.transAxes)
+            for i, mejora in enumerate(mejoras):
+                ax.text(0.1, 0.6 - i*0.15, mejora, fontsize=10, transform=ax.transAxes)
+            
+            ax.set_xlim(0, 1)
+            ax.set_ylim(0, 1)
+            ax.axis('off')
+            
+            plt.tight_layout()
+            plt.savefig('visualizacion_pipeline.png', dpi=300, bbox_inches='tight')
+            plt.show()
+            
+            print("✅ Visualización guardada como 'visualizacion_pipeline.png'")
+            
+        except Exception as e:
+            print(f"⚠️ Error creando visualización: {e}")
+    
+    def crear_visualizacion_casos_practicos(self, df_ecommerce, df_temporal):
+        """Crea visualizaciones para los casos prácticos"""
+        try:
+            fig, axes = plt.subplots(2, 3, figsize=(18, 12))
+            
+            # E-commerce: Precios normalizados
+            ax = axes[0, 0]
+            if 'precio_normalizado' in df_ecommerce.columns:
+                precios = df_ecommerce['precio_normalizado'].dropna()
+                ax.hist(precios, bins=20, alpha=0.7, color='lightblue', edgecolor='black')
+                ax.set_title('Distribución de Precios Normalizados (USD)')
+                ax.set_xlabel('Precio (USD)')
+                ax.set_ylabel('Frecuencia')
+                ax.grid(True, alpha=0.3)
+            
+            # E-commerce: Categorías limpias
+            ax = axes[0, 1]
+            if 'categoria_limpia' in df_ecommerce.columns:
+                categorias = df_ecommerce['categoria_limpia'].value_counts()
+                ax.pie(categorias.values, labels=categorias.index, autopct='%1.1f%%', startangle=90)
+                ax.set_title('Distribución de Categorías Limpias')
+            
+            # E-commerce: Comparación antes/después
+            ax = axes[0, 2]
+            if 'precio' in df_ecommerce.columns and 'precio_normalizado' in df_ecommerce.columns:
+                try:
+                    # Extraer números de precios originales de forma más robusta
+                    precios_originales = []
+                    for precio_str in df_ecommerce['precio'].dropna():
+                        # Buscar números en el string
+                        import re
+                        numeros = re.findall(r'[\d,\.]+', str(precio_str))
+                        if numeros:
+                            try:
+                                # Convertir a float manejando formatos europeos/americanos
+                                num_str = numeros[0].replace(',', '.') if ',' in numeros[0] and '.' not in numeros[0] else numeros[0].replace(',', '')
+                                precios_originales.append(float(num_str))
+                            except:
+                                continue
+                    
+                    precios_limpios = df_ecommerce['precio_normalizado'].dropna().tolist()
+                    
+                    if precios_originales and precios_limpios:
+                        ax.boxplot([precios_originales, precios_limpios], 
+                                  labels=['Originales', 'Normalizados'])
+                        ax.set_title('Comparación de Precios')
+                        ax.set_ylabel('Precio')
+                        ax.grid(True, alpha=0.3)
+                    else:
+                        ax.text(0.5, 0.5, 'No hay datos suficientes\npara comparar', 
+                               ha='center', va='center', transform=ax.transAxes)
+                        ax.set_title('Comparación de Precios')
+                except Exception as e:
+                    ax.text(0.5, 0.5, f'Error en comparación:\n{str(e)[:50]}...', 
+                           ha='center', va='center', transform=ax.transAxes)
+                    ax.set_title('Comparación de Precios')
+            
+            # Temporal: Serie temporal
+            ax = axes[1, 0]
+            if 'timestamp_parsed' in df_temporal.columns and 'temperatura' in df_temporal.columns:
+                df_temp = df_temporal.dropna(subset=['timestamp_parsed', 'temperatura'])
+                if len(df_temp) > 0:
+                    ax.plot(df_temp['timestamp_parsed'], df_temp['temperatura'], 
+                           marker='o', markersize=3, alpha=0.7)
+                    ax.set_title('Serie Temporal de Temperatura')
+                    ax.set_xlabel('Tiempo')
+                    ax.set_ylabel('Temperatura (°C)')
+                    ax.tick_params(axis='x', rotation=45)
+                    ax.grid(True, alpha=0.3)
+            
+            # Temporal: Distribución de variables
+            ax = axes[1, 1]
+            if 'temperatura' in df_temporal.columns and 'humedad' in df_temporal.columns:
+                ax.scatter(df_temporal['temperatura'], df_temporal['humedad'], 
+                          alpha=0.6, color='green')
+                ax.set_title('Temperatura vs Humedad')
+                ax.set_xlabel('Temperatura (°C)')
+                ax.set_ylabel('Humedad (%)')
+                ax.grid(True, alpha=0.3)
+            
+            # Resumen de mejoras
+            ax = axes[1, 2]
+            mejoras = []
+            
+            if 'precio_normalizado' in df_ecommerce.columns:
+                precios_validos = df_ecommerce['precio_normalizado'].notna().sum()
+                mejoras.append(f'Precios normalizados: {precios_validos}')
+            
+            if 'categoria_limpia' in df_ecommerce.columns:
+                categorias_unicas = df_ecommerce['categoria_limpia'].nunique()
+                mejoras.append(f'Categorías únicas: {categorias_unicas}')
+            
+            if 'timestamp_parsed' in df_temporal.columns:
+                fechas_parseadas = df_temporal['timestamp_parsed'].notna().sum()
+                mejoras.append(f'Fechas parseadas: {fechas_parseadas}')
+            
+            mejoras.append('Datos listos para análisis')
+            
+            ax.text(0.1, 0.8, 'MEJORAS LOGRADAS:', fontsize=12, fontweight='bold', transform=ax.transAxes)
+            for i, mejora in enumerate(mejoras):
+                ax.text(0.1, 0.6 - i*0.1, mejora, fontsize=10, transform=ax.transAxes)
+            
+            ax.set_xlim(0, 1)
+            ax.set_ylim(0, 1)
+            ax.axis('off')
+            
+            plt.tight_layout()
+            plt.savefig('visualizacion_casos_practicos.png', dpi=300, bbox_inches='tight')
+            plt.show()
+            
+            print("✅ Visualización guardada como 'visualizacion_casos_practicos.png'")
+            
+        except Exception as e:
+            print(f"⚠️ Error creando visualización: {e}")
     
     def ejecutar(self):
         """Ejecuta la presentación interactiva"""

@@ -36,7 +36,11 @@ class DataCleaner:
         Args:
             config: Configuración personalizada del pipeline
         """
-        self.config = config or self._configuracion_default()
+        # Fusionar configuración personalizada con la por defecto
+        config_default = self._configuracion_default()
+        if config:
+            config_default.update(config)
+        self.config = config_default
         self.transformaciones = []
         self.logger = self._configurar_logging()
         self.estadisticas = {}

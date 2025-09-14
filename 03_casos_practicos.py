@@ -60,13 +60,13 @@ class LimpiadorEcommerce:
             numeros = re.findall(r'[\d,\.]+', precio_str)
             if numeros:
                 try:
-                    precio_num = float(numeros[0].replace(',', '.'))
+                    precio_num = self._parsear_numero(numeros[0])
                     return precio_num  # Asumir USD por defecto
                 except ValueError:
                     return None
             return None
         
-        precio_num = float(match.group(1).replace(',', '.'))
+        precio_num = self._parsear_numero(match.group(1))
         moneda_str = match.group(2).upper()
         
         # Normalizar moneda
@@ -77,6 +77,40 @@ class LimpiadorEcommerce:
             return precio_num / self.tasas_cambio[moneda]
         
         return precio_num
+    
+    def _parsear_numero(self, numero_str: str) -> float:
+        """
+        Parsea números en formato europeo o americano
+        
+        Args:
+            numero_str: String con número
+            
+        Returns:
+            Número como float
+        """
+        # Limpiar espacios
+        numero_str = numero_str.strip()
+        
+        # Detectar formato europeo (1.099,00) vs americano (1,099.00)
+        if ',' in numero_str and '.' in numero_str:
+            # Ambos separadores presentes
+            if numero_str.rfind(',') > numero_str.rfind('.'):
+                # Formato europeo: 1.099,00
+                numero_str = numero_str.replace('.', '').replace(',', '.')
+            else:
+                # Formato americano: 1,099.00
+                numero_str = numero_str.replace(',', '')
+        elif ',' in numero_str:
+            # Solo coma - verificar si es decimal o miles
+            partes = numero_str.split(',')
+            if len(partes) == 2 and len(partes[1]) <= 2:
+                # Formato europeo: 1099,00
+                numero_str = numero_str.replace(',', '.')
+            else:
+                # Formato americano: 1,099
+                numero_str = numero_str.replace(',', '')
+        
+        return float(numero_str)
     
     def limpiar_categoria(self, categoria: str) -> str:
         """
